@@ -1,0 +1,39 @@
+<conf:axon xmlns:conf="urn:walmart:axon/config/1.0">
+	<conf:connectionPolicy connectionAttemptCount="1000"
+		connectionAttemptDelay="5000" connectionResetTimeout="20000"
+		reconnectAttemptCount="1000" reconnectAttemptDelay="5000">
+		<conf:clientId>Walmart-MOSAICCOMM</conf:clientId>
+		<conf:topology>SINGLE_DATA_CENTER</conf:topology>
+		<conf:loadBalancer>ROUND_ROBIN</conf:loadBalancer>
+	</conf:connectionPolicy>
+	<conf:dataCenter name="sdc">
+		<conf:connection name="node1"
+			className="com.tibco.tibjms.TibjmsConnectionFactory">
+			<conf:property name="serverUrl"
+				value="tcp://maastibcoems-59189738-1-59267113.stg.maastibco.platform.prod.walmart.com:7222" />
+			<conf:property name="userName" value="comm_stg" />
+			<conf:property name="userPassword" value="comm_stg" />
+		</conf:connection>
+		<conf:connection name="node2"
+			className="com.tibco.tibjms.TibjmsConnectionFactory">
+			<conf:property name="serverUrl"
+				value="tcp://maastibcoems-59189738-2-59267116.stg.maastibco.platform.prod.walmart.com:7222" />
+			<conf:property name="userName" value="comm_stg" />
+			<conf:property name="userPassword" value="comm_stg" />
+		</conf:connection>
+		<conf:connection name="node3"
+			className="com.tibco.tibjms.TibjmsConnectionFactory">
+			<conf:property name="serverUrl"
+				value="tcp://maastibcoems-54788761-1-59266550.stg.maastibco.platform.prod.walmart.com:7222" />
+			<conf:property name="userName" value="comm_stg" />
+			<conf:property name="userPassword" value="comm_stg" />
+		</conf:connection>
+		<conf:connection name="node4"
+			className="com.tibco.tibjms.TibjmsConnectionFactory">
+			<conf:property name="serverUrl"
+				value="tcp://maastibcoems-54788761-2-59266553.stg.maastibco.platform.prod.walmart.com:7222" />
+			<conf:property name="userName" value="comm_stg" />
+			<conf:property name="userPassword" value="comm_stg" />
+		</conf:connection>
+	</conf:dataCenter>
+</conf:axon>
